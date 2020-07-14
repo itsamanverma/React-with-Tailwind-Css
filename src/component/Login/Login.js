@@ -9,10 +9,19 @@ export default class Login extends Component {
                     <form className="border border-gray-500">
                         <div className="p-4">
                             <h1 className="text-lg border-b border-gray-500">Ping Here</h1>
-                            <div>
+                            <div className="mt-4">
                                 <label>Email</label>
                                 <input type="email" name="email" placeholder="Lovely Email" 
-                                className="p-2 bg-gray-200 rounded border border-grap-400 w-full"/>
+                                className="mt-2 p-2 bg-gray-200 rounded border border-grap-400 w-full"/>
+                            </div>
+                            <div className="mt-4">
+                                <label>Password</label>
+                                <input type="password" name="password" placeholder="Super Duper Secret Password" 
+                                className="mt-2 p-2 bg-gray-200 rounded border border-grap-400 w-full"/>
+                            </div>
+                            <div className="mt-4">
+                                <input type="submit"
+                                className="mt-2 p-2 border border-gray-400 rounded cursor-pointer bg-purple-500 text-white"/>
                             </div>
                         </div>
                     </form>
