@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 
 import Login from './component/Login/Login';
+import Profile from './component/Profile/Profile';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Router>
         <Switch>
           <Route path="/login" component={Login}></Route>
+          <Route path="/profile" component={Profile}></Route>
         </Switch>
       </Router>
     </div>
