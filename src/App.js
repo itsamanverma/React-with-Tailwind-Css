@@ -8,6 +8,7 @@ import {
 
 import Login from './component/Login/Login';
 import Profile from './component/Profile/Profile';
+import Register from './component/Register/Register';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Switch>
           <Route path="/login" component={Login}></Route>
           <Route path="/profile" component={Profile}></Route>
+          <Route path="/" exact component={Register}></Route>
         </Switch>
       </Router>
     </div>

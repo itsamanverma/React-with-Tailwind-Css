@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import UserService from '../../services/user_service.js';
 import utility from '../../utility';
+import './Login.css';
 
 export default class Login extends Component {
 
@@ -81,6 +82,7 @@ export default class Login extends Component {
                     <form className="border border-gray-500" onSubmit={this.handleForm}>
                         <div className="p-4">
                             <h1 className="text-lg border-b border-gray-500">Ping Here</h1>
+                            {/* {errors.error.email ? <p className="text-red text-sm">{errors.error.email}</p>: ""} */}
                             <div className="mt-4">
                                 <label>Email</label>
                                 <input
@@ -106,8 +108,11 @@ export default class Login extends Component {
                                 <span className='error'>{errors.password}</span>
                             </div>
                             <div className="mt-4">
-                                <input type="submit"
-                                    className="mt-2 p-2 border border-gray-400 rounded cursor-pointer bg-purple-500 text-white" />
+                                <input 
+                                    type="submit"
+                                    value="Login"
+                                    className="mt-2 p-2 border border-gray-400 rounded cursor-pointer bg-purple-500 text-white" 
+                                />
                             </div>
                         </div>
                     </form>
