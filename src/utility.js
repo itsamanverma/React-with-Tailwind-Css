@@ -3,7 +3,7 @@ module.exports = {
         if (value.trim().length === 0) {
             return false;
         }
-        let stringRegex = '^[A-Za-z]+$'
+        let stringRegex = '^[A-Za-z ]+$'
         let regex = new RegExp(stringRegex);
         return regex.test(value);
     },
