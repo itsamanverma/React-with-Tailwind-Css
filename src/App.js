@@ -3,13 +3,13 @@ import './css/tailwind.css';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
 } from "react-router-dom";
 
 import Login from './pages/Login/Login';
 import Profile from './pages/Profile/Profile';
 import Register from './pages/Register/Register';
 import GuestRoute from './component/GuestRoute/GuestRoute';
+import AuthRoute from './component/AuthRoute/AuthRoute';
 
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
       <Router>
         <Switch>
           <GuestRoute path="/login" component={Login}></GuestRoute>
-          <Route path="/profile" component={Profile}></Route>
+          <AuthRoute path="/profile" component={Profile}></AuthRoute>
           <GuestRoute path="/register" component={Register}></GuestRoute>
         </Switch>
       </Router>
