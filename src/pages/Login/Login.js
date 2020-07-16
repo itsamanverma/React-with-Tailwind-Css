@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import UserService from '../../services/user_service.js';
 import utility from '../../utility';
 import './Login.css';
+import cookie from 'js-cookie';
 
 export default class Login extends Component {
 
@@ -27,6 +28,8 @@ export default class Login extends Component {
             console.log('api call');
             UserService.login(this.state).then((data) => {
                 console.log("response from login", data);
+                cookie.set( "token", data.data.access_token);
+                cookie.set( "user", data.data.user);
                 this.props.history.push('/profile');
             })
             .catch((error) => {

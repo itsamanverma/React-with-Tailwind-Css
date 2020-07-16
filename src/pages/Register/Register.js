@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import UserService from '../../services/user_service.js';
 import utility from '../../utility';
 import './Register.css';
+import cookie from 'js-cookie';
 
 export default class Register extends Component {
     state = {
@@ -28,7 +29,9 @@ export default class Register extends Component {
             console.log('api call');
             UserService.register(this.state).then((data) => {
                 console.log("response from register", data);
-                // this.props.history.push('/login');
+                cookie.set( "token", data.data.access_token);
+                cookie.set( "user", data.data.user);
+                this.props.history.push('/profile');
             })
             .catch((error) => {
                 console.log("error from register", error.response.data);
