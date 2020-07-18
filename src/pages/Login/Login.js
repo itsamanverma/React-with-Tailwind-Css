@@ -3,8 +3,9 @@ import UserService from '../../services/user_service.js';
 import utility from '../../utility';
 import './Login.css';
 import cookie from 'js-cookie';
+import { connect } from 'react-redux';
 
-export default class Login extends Component {
+class Login extends Component {
 
     constructor(props) {
         super(props);
@@ -29,7 +30,8 @@ export default class Login extends Component {
             UserService.login(this.state).then((data) => {
                 console.log("response from login", data);
                 cookie.set( "token", data.data.access_token);
-                cookie.set( "user", data.data.user);
+                // cookie.set( "user", data.data.user);
+                this.props.setLogin(data.data.user);
                 this.props.history.push('/profile');
             })
             .catch((error) => {
@@ -124,3 +126,11 @@ export default class Login extends Component {
         )
     }
 }
+
+const mapDispatchToProps = dispatch => {
+    return {
+        setLogin: (user) => dispatch({type: "SET_LOGIN", payload: user })
+    };
+};
+
+export default connect(null, mapDispatchToProps)(Login);
